@@ -1,17 +1,9 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-matrix = [
-    [0, 0, 38, 95, 0, 1, 57, 0],
-    [0, 0, 0, 0, 79, 0, 36, 19],
-    [38, 0, 0, 51, 0, 0, 44, 0],
-    [95, 0, 51, 0, 0, 44, 0, 0],
-    [0, 79, 0, 0, 0, 93, 41, 48],
-    [1, 0, 0, 44, 93, 0, 1, 0],
-    [57, 36, 44, 0, 41, 1, 0, 0],
-    [0, 19, 0, 0, 48, 0, 0, 0]
-]
 
+with open('matrix.txt', 'r') as f:
+    matrix = [[int(num) for num in line.split()] for line in f.readlines()]
 A = nx.Graph()
 A.add_nodes_from(range(len(matrix)))
 
